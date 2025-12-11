@@ -16,7 +16,7 @@ function Pizza()  {
   return (
     <div>
       <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
+      <h3>Pizza Spinaci</h3>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
       <span>12$</span>
     </div>
@@ -24,16 +24,23 @@ function Pizza()  {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>
+  return (
+    <div className='header'>
+      <h1>Fast React Pizza Co.</h1>
+    </div>
+  )
 }
 
 function Menu() {
-  return <div>
-    <h2>Our Menu</h2>
-    <Pizza />
-    <Pizza />
-    <Pizza />
+  return (
+    <div className='menu'>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
     </div>
+  );
+
 }
 
 function Footer() {
@@ -46,7 +53,12 @@ function Footer() {
   //if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   //else alert("Sorry we're closed");
   
-  return <footer>{new Date().toLocaleTimeString()} We're currently open</footer>;
+  return (
+    <footer className='footer'>
+      {new Date().toLocaleTimeString()} We're currently open
+    </footer>
+  );
+
   
   //return React.createElement('footer', null, 'Copyright 2025 Fast React Pizza Co.');
 }
