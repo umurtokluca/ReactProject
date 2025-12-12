@@ -12,17 +12,6 @@ function App() {
   )
 }
 
-function Pizza()  {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-      <span>12$</span>
-    </div>
-  )
-}
-
 function Header() {
   return (
     <div className='header'>
@@ -35,12 +24,34 @@ function Menu() {
   return (
     <div className='menu'>
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza 
+        name='Pizza Spinaci' 
+        ingredient='Tomato, mozarella, spinach, and ricotta cheese' 
+        image='pizzas/spinaci.jpg' 
+        price={10}
+      />
+
+      <Pizza 
+        name='Pizza Funghi' 
+        ingredient='Tomato, mushrooms' 
+        image='pizzas/funghi.jpg' 
+        price={12} 
+      />
     </div>
   );
+}
 
+function Pizza(props)  {
+  return (
+    <div className='pizza'>
+      <img src={props.image} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredient}</p>
+        <span>{props.price}</span>
+      </div>
+    </div>
+  )
 }
 
 function Footer() {
