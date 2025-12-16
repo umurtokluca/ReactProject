@@ -92,18 +92,18 @@ const numPizzas = pizzas.length;
 }
 
 function Pizza({pizzaObj}) {
-  console.log(pizzaObj);
+  //console.log(pizzaObj);
 
-  let className = '';
-  if(pizzaObj.soldOut) className = 'sold-out';
+  // let className = '';
+  // if(pizzaObj.soldOut) className = 'sold-out';
 
   return (
-    <li className={`pizza ${className}`}>
+    <li className={`pizza${pizzaObj.soldOut ? " sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price}</span>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </li>
   )
